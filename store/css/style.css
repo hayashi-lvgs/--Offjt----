@@ -4,7 +4,11 @@
 *,
 *::before,
 *::after {
+  
   box-sizing: border-box;
+  /* ボックスの外側の幅を指定することができる
+   paddingとかで外側にはみ出す仕様になったとしても外側は変わらない*/
+  
 }
 
 html {
@@ -15,6 +19,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   line-height: 1.6;
+  /* 行と行の間の高さ（行間）を、文字サイズの 1.6 倍にする指定。*/
   color: #333;
   background-color: #fff;
 }
@@ -22,7 +27,10 @@ body {
 img {
   max-width: 100%;
   height: auto;
+  /*中身の量に合わせて高さを自動で決める（「勝手にちょうどいい高さになる」**設定。 */
   display: block;
+  /*要素を「ブロック要素」として扱う （横幅は基本 親要素いっぱい
+　　　前後で 改行される */
 }
 
 a {
@@ -50,6 +58,7 @@ a:hover {
 /* ==== ヘッダーの基本レイアウト ==== */
 #header {
   display: flex;
+  /*子要素が 横並び になる */
   align-items: center;
   justify-content: space-between;
   padding: 24px 0;
@@ -65,6 +74,7 @@ a:hover {
 /* ==== 左からスライドするメニュー ==== */
 #navi {
   position: fixed;
+  /*「画面に固定する」指定。*/
   top: 0;
   left: 0;
   width: 260px;
@@ -73,6 +83,7 @@ a:hover {
   color: #fff;
   padding-top: 80px;
   transform: translateX(-100%);
+  /*「自分の幅ぶん、左にスライドさせる」指定。*/
   transition: transform 0.35s ease;
   z-index: 2000;
 }
